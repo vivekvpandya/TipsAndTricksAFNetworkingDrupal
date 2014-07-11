@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4828C212C12463898F0627A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A790233FF7490E93C4E30E /* libPods.a */; };
 		CF85880019685E4000A62CCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8587FF19685E4000A62CCB /* Foundation.framework */; };
 		CF85880219685E4000A62CCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF85880119685E4000A62CCB /* CoreGraphics.framework */; };
 		CF85880419685E4000A62CCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF85880319685E4000A62CCB /* UIKit.framework */; };
@@ -14,13 +15,26 @@
 		CF85880C19685E4000A62CCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85880B19685E4000A62CCB /* main.m */; };
 		CF85881019685E4100A62CCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85880F19685E4100A62CCB /* AppDelegate.m */; };
 		CF85881319685E4100A62CCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF85881119685E4100A62CCB /* Main.storyboard */; };
-		CF85881619685E4100A62CCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85881519685E4100A62CCB /* ViewController.m */; };
 		CF85881819685E4100A62CCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF85881719685E4100A62CCB /* Images.xcassets */; };
 		CF85881F19685E4100A62CCB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF85881E19685E4100A62CCB /* XCTest.framework */; };
 		CF85882019685E4100A62CCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8587FF19685E4000A62CCB /* Foundation.framework */; };
 		CF85882119685E4100A62CCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF85880319685E4000A62CCB /* UIKit.framework */; };
 		CF85882919685E4100A62CCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF85882719685E4100A62CCB /* InfoPlist.strings */; };
 		CF85882B19685E4200A62CCB /* TipsAndTricksAFNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85882A19685E4200A62CCB /* TipsAndTricksAFNetworkingTests.m */; };
+		CF8CA26B196939980093B937 /* SGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA26A196939980093B937 /* SGKeychain.m */; };
+		CF8CA27C19693A6B0093B937 /* TnTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA26D19693A6B0093B937 /* TnTSignUpViewController.m */; };
+		CF8CA27D19693A6B0093B937 /* TnTEditandNewTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA26F19693A6B0093B937 /* TnTEditandNewTipViewController.m */; };
+		CF8CA27E19693A6B0093B937 /* TnTTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA27119693A6B0093B937 /* TnTTipViewController.m */; };
+		CF8CA27F19693A6B0093B937 /* TnTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA27319693A6B0093B937 /* TnTTableViewController.m */; };
+		CF8CA28019693A6B0093B937 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA27519693A6B0093B937 /* UserDetailsViewController.m */; };
+		CF8CA28119693A6B0093B937 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA27719693A6B0093B937 /* LoginViewController.m */; };
+		CF8CA28219693A6B0093B937 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA27919693A6B0093B937 /* NavigationController.m */; };
+		CF8CA28319693A6B0093B937 /* TnTSelectTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA27B19693A6B0093B937 /* TnTSelectTagViewController.m */; };
+		CF8CA28C19693A870093B937 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28619693A870093B937 /* JSONModel.m */; };
+		CF8CA28D19693A870093B937 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28819693A870093B937 /* User.m */; };
+		CF8CA28E19693A870093B937 /* TipsandTricks.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28919693A870093B937 /* TipsandTricks.m */; };
+		CF8CA28F19693A870093B937 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28B19693A870093B937 /* Tip.m */; };
+		CFE02A071968747E0086C2E4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFE02A061968747E0086C2E4 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39802581E93A418EBFAF9664 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B6A790233FF7490E93C4E30E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8587FC19685E4000A62CCB /* TipsAndTricksAFNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsAndTricksAFNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8587FF19685E4000A62CCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF85880119685E4000A62CCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +61,39 @@
 		CF85880E19685E4100A62CCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF85880F19685E4100A62CCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CF85881219685E4100A62CCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CF85881419685E4100A62CCB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CF85881519685E4100A62CCB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CF85881719685E4100A62CCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF85881D19685E4100A62CCB /* TipsAndTricksAFNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsAndTricksAFNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF85881E19685E4100A62CCB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CF85882619685E4100A62CCB /* TipsAndTricksAFNetworkingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TipsAndTricksAFNetworkingTests-Info.plist"; sourceTree = "<group>"; };
 		CF85882819685E4100A62CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF85882A19685E4200A62CCB /* TipsAndTricksAFNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipsAndTricksAFNetworkingTests.m; sourceTree = "<group>"; };
+		CF8CA269196939980093B937 /* SGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeychain.h; sourceTree = "<group>"; };
+		CF8CA26A196939980093B937 /* SGKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeychain.m; sourceTree = "<group>"; };
+		CF8CA26C19693A6B0093B937 /* TnTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TnTSignUpViewController.h; sourceTree = "<group>"; };
+		CF8CA26D19693A6B0093B937 /* TnTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TnTSignUpViewController.m; sourceTree = "<group>"; };
+		CF8CA26E19693A6B0093B937 /* TnTEditandNewTipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TnTEditandNewTipViewController.h; sourceTree = "<group>"; };
+		CF8CA26F19693A6B0093B937 /* TnTEditandNewTipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TnTEditandNewTipViewController.m; sourceTree = "<group>"; };
+		CF8CA27019693A6B0093B937 /* TnTTipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TnTTipViewController.h; sourceTree = "<group>"; };
+		CF8CA27119693A6B0093B937 /* TnTTipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TnTTipViewController.m; sourceTree = "<group>"; };
+		CF8CA27219693A6B0093B937 /* TnTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TnTTableViewController.h; sourceTree = "<group>"; };
+		CF8CA27319693A6B0093B937 /* TnTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TnTTableViewController.m; sourceTree = "<group>"; };
+		CF8CA27419693A6B0093B937 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		CF8CA27519693A6B0093B937 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		CF8CA27619693A6B0093B937 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CF8CA27719693A6B0093B937 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CF8CA27819693A6B0093B937 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		CF8CA27919693A6B0093B937 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		CF8CA27A19693A6B0093B937 /* TnTSelectTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TnTSelectTagViewController.h; sourceTree = "<group>"; };
+		CF8CA27B19693A6B0093B937 /* TnTSelectTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TnTSelectTagViewController.m; sourceTree = "<group>"; };
+		CF8CA28419693A870093B937 /* TipsandTricks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsandTricks.h; sourceTree = "<group>"; };
+		CF8CA28519693A870093B937 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CF8CA28619693A870093B937 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		CF8CA28719693A870093B937 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		CF8CA28819693A870093B937 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CF8CA28919693A870093B937 /* TipsandTricks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsandTricks.m; sourceTree = "<group>"; };
+		CF8CA28A19693A870093B937 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
+		CF8CA28B19693A870093B937 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
+		CFE02A061968747E0086C2E4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +104,7 @@
 				CF85880219685E4000A62CCB /* CoreGraphics.framework in Frameworks */,
 				CF85880419685E4000A62CCB /* UIKit.framework in Frameworks */,
 				CF85880019685E4000A62CCB /* Foundation.framework in Frameworks */,
+				A4828C212C12463898F0627A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,10 +124,12 @@
 		CF8587F319685E4000A62CCB = {
 			isa = PBXGroup;
 			children = (
+				CFE02A061968747E0086C2E4 /* Settings.bundle */,
 				CF85880519685E4000A62CCB /* TipsAndTricksAFNetworking */,
 				CF85882419685E4100A62CCB /* TipsAndTricksAFNetworkingTests */,
 				CF8587FE19685E4000A62CCB /* Frameworks */,
 				CF8587FD19685E4000A62CCB /* Products */,
+				39802581E93A418EBFAF9664 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +149,7 @@
 				CF85880119685E4000A62CCB /* CoreGraphics.framework */,
 				CF85880319685E4000A62CCB /* UIKit.framework */,
 				CF85881E19685E4100A62CCB /* XCTest.framework */,
+				B6A790233FF7490E93C4E30E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,9 +160,33 @@
 				CF85880E19685E4100A62CCB /* AppDelegate.h */,
 				CF85880F19685E4100A62CCB /* AppDelegate.m */,
 				CF85881119685E4100A62CCB /* Main.storyboard */,
-				CF85881419685E4100A62CCB /* ViewController.h */,
-				CF85881519685E4100A62CCB /* ViewController.m */,
+				CF8CA269196939980093B937 /* SGKeychain.h */,
+				CF8CA26C19693A6B0093B937 /* TnTSignUpViewController.h */,
+				CF8CA26D19693A6B0093B937 /* TnTSignUpViewController.m */,
+				CF8CA26E19693A6B0093B937 /* TnTEditandNewTipViewController.h */,
+				CF8CA26F19693A6B0093B937 /* TnTEditandNewTipViewController.m */,
+				CF8CA27019693A6B0093B937 /* TnTTipViewController.h */,
+				CF8CA27119693A6B0093B937 /* TnTTipViewController.m */,
+				CF8CA27219693A6B0093B937 /* TnTTableViewController.h */,
+				CF8CA27319693A6B0093B937 /* TnTTableViewController.m */,
+				CF8CA27419693A6B0093B937 /* UserDetailsViewController.h */,
+				CF8CA27519693A6B0093B937 /* UserDetailsViewController.m */,
+				CF8CA27619693A6B0093B937 /* LoginViewController.h */,
+				CF8CA27719693A6B0093B937 /* LoginViewController.m */,
+				CF8CA27819693A6B0093B937 /* NavigationController.h */,
+				CF8CA27919693A6B0093B937 /* NavigationController.m */,
+				CF8CA27A19693A6B0093B937 /* TnTSelectTagViewController.h */,
+				CF8CA27B19693A6B0093B937 /* TnTSelectTagViewController.m */,
+				CF8CA26A196939980093B937 /* SGKeychain.m */,
 				CF85881719685E4100A62CCB /* Images.xcassets */,
+				CF8CA28419693A870093B937 /* TipsandTricks.h */,
+				CF8CA28519693A870093B937 /* User.h */,
+				CF8CA28619693A870093B937 /* JSONModel.m */,
+				CF8CA28719693A870093B937 /* JSONModel.h */,
+				CF8CA28819693A870093B937 /* User.m */,
+				CF8CA28919693A870093B937 /* TipsandTricks.m */,
+				CF8CA28A19693A870093B937 /* Tip.h */,
+				CF8CA28B19693A870093B937 /* Tip.m */,
 				CF85880619685E4000A62CCB /* Supporting Files */,
 			);
 			path = TipsAndTricksAFNetworking;
@@ -159,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF85882E19685E4200A62CCB /* Build configuration list for PBXNativeTarget "TipsAndTricksAFNetworking" */;
 			buildPhases = (
+				BCCF5D6D56004566A16D1EF4 /* Check Pods Manifest.lock */,
 				CF8587F819685E4000A62CCB /* Sources */,
 				CF8587F919685E4000A62CCB /* Frameworks */,
 				CF8587FA19685E4000A62CCB /* Resources */,
+				1B72156C04FC45749A6A4565 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE02A071968747E0086C2E4 /* Settings.bundle in Resources */,
 				CF85881819685E4100A62CCB /* Images.xcassets in Resources */,
 				CF85880A19685E4000A62CCB /* InfoPlist.strings in Resources */,
 				CF85881319685E4100A62CCB /* Main.storyboard in Resources */,
@@ -244,14 +316,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B72156C04FC45749A6A4565 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCCF5D6D56004566A16D1EF4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF8587F819685E4000A62CCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF85881619685E4100A62CCB /* ViewController.m in Sources */,
+				CF8CA28D19693A870093B937 /* User.m in Sources */,
+				CF8CA26B196939980093B937 /* SGKeychain.m in Sources */,
+				CF8CA27D19693A6B0093B937 /* TnTEditandNewTipViewController.m in Sources */,
+				CF8CA28019693A6B0093B937 /* UserDetailsViewController.m in Sources */,
 				CF85881019685E4100A62CCB /* AppDelegate.m in Sources */,
+				CF8CA27E19693A6B0093B937 /* TnTTipViewController.m in Sources */,
+				CF8CA28119693A6B0093B937 /* LoginViewController.m in Sources */,
+				CF8CA27F19693A6B0093B937 /* TnTTableViewController.m in Sources */,
+				CF8CA28219693A6B0093B937 /* NavigationController.m in Sources */,
+				CF8CA28F19693A870093B937 /* Tip.m in Sources */,
+				CF8CA28319693A6B0093B937 /* TnTSelectTagViewController.m in Sources */,
+				CF8CA28C19693A870093B937 /* JSONModel.m in Sources */,
 				CF85880C19685E4000A62CCB /* main.m in Sources */,
+				CF8CA27C19693A6B0093B937 /* TnTSignUpViewController.m in Sources */,
+				CF8CA28E19693A870093B937 /* TipsandTricks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +490,7 @@
 		};
 		CF85882F19685E4200A62CCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39802581E93A418EBFAF9664 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -386,6 +504,7 @@
 		};
 		CF85883019685E4200A62CCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39802581E93A418EBFAF9664 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -456,6 +575,7 @@
 				CF85883019685E4200A62CCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF85883119685E4200A62CCB /* Build configuration list for PBXNativeTarget "TipsAndTricksAFNetworkingTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +584,7 @@
 				CF85883319685E4200A62CCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

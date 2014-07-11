@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "SGKeychain.h"
+#import "User.h"
+#import "AFNetworkActivityIndicatorManager.h"
+#import "TipsandTricks.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    AFNetworkActivityIndicatorManager.sharedManager.enabled = YES;
+        // Override point for customization after application launch.
+    
+ 
     return YES;
 }
 							
