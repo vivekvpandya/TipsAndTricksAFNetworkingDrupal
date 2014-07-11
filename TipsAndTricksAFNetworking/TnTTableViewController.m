@@ -17,10 +17,8 @@
 
 @interface TnTTableViewController ()
 
-@property (nonatomic,strong) NSURLSession *session; // to hold NSURLSession object
 @property (nonatomic,strong) NSMutableArray *tipList; // to hold NSDictionaries that are created with JSON Response and each NSDictionary represent tip object i.e it will contain all the fields which you have enabled from RESTExport for the view
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addTipButton;
-@property (weak, nonatomic) IBOutlet UIProgressView *processView;
 
 
 
@@ -28,133 +26,7 @@
 
 @implementation TnTTableViewController
 
-/*-(IBAction)getData{
-    
-    
-    // this method creates NSURLRequest for appropriate URL and than create NSURLSessionData task to GET data.
-    
- 
-    
-        NSMutableURLRequest *request =  [[NSMutableURLRequest alloc]initWithURL:[TipsandTricks createURLForPath:@"fossTips/rest"]];
-    [request setHTTPMethod:@"GET"];
-    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-   // [request setValue:@"max-age:1200" forHTTPHeaderField:@"Cache-Control"];
-    
-    if (self.session){
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-        // use of GCD and Multithreading so Main Queue will not block untill data is retrieved.
-     
-        
-        
-        dispatch_queue_t fatchQ = dispatch_queue_create("fetch queue", NULL);
-        dispatch_async(fatchQ, ^{
-            
-            NSURLSessionDataTask *getRequestTask = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                
-                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-           
-                if (!error && httpResponse.statusCode == 200 ) {
-                    
-                  
-               NSLog(@"%d",httpResponse.statusCode);
-                    
-                    //Once data is retrieved dispatch back to main queue to adjust UI
 
-            
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSError *JSONError  = [[NSError alloc]init];
-                    NSArray *retrivedJSONObjectArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&JSONError];
-                    
-                    if (retrivedJSONObjectArray == nil) {
-                        
-                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                                       message:@" Unable to download, Try checking network connection "
-                                                                      delegate:nil
-                                                             cancelButtonTitle:nil
-                                                             otherButtonTitles:@"OK", nil];
-                        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                        [alert show];
-                    }
-                    else{
-                    
-                        //self.tipList = retrivedJSONObjectArray;
-                         [self.tipList removeAllObjects];    // clear all previous data
-                        
-                        for (NSMutableDictionary * tip in retrivedJSONObjectArray) {
-                            
-                            Tip *newTip = [[Tip alloc]initWithDictionary:tip];
-                            [self.tipList addObject:newTip];
-                            
-                        }
-                        
-                        [self.tableView reloadData];
-                    
-                    
-                    }
-                    
-                    // stop UITableViewController's refreshControl animation
-                    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                    [self.refreshControl endRefreshing];
-                });
-                
-                }
-                else {
-                     // dataTask is not complited due to error
-                    
-                    NSString *errorDescription = [[NSString alloc]init];
-                    
-                    switch (httpResponse.statusCode) {
-                        case 404:
-                          errorDescription = @" The requested URL was not found on this server. ";
-                            break;
-                        case 0:
-                            errorDescription = @"Could not get any response, It seems could not connect to the sever. ";
-                            break;
-                        default:
-                            errorDescription = [NSString stringWithFormat:@"%ld %@",(long)httpResponse.statusCode,[NSHTTPURLResponse localizedStringForStatusCode:httpResponse.statusCode]];
-                            break;
-                    }
-                    
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                        // provide user a alert about error
-                        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                        [self.refreshControl endRefreshing];
-                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                                       message:errorDescription
-                                                                      delegate:nil
-                                                             cancelButtonTitle:nil
-                                                             otherButtonTitles:@"OK", nil];
-                        [alert show];
-                    
-                    });
-                   
-                
-            }
-                
-            }];
-            
-            // Very Very important to resume NSURLSessionTask because by defalut it is suspended.
-
-            [getRequestTask resume];
-            
-        });
-        
-        
-        
-
-        
-        
-    }
-    else{
-        NSLog(@"I'm not getting Session object");
-        
-    }
-         
-    
-
-} */
 
 
 -(IBAction)getData{
@@ -210,38 +82,7 @@
 
 }
 
-/*-(void)setTipList:(NSMutableArray *)tipList{
 
-    _tipList = tipList;
-    [self.tableView reloadData];
-
-
-}
- */
-
--(NSURLSession *)session{
-    if (!_session) {
-        //creating session object if not exist.
-        // To configure session object use NSURLSessionConfiguration , ephemeralSessionConfiguration is very basic configuration object.
-
-        
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-        [config setHTTPAdditionalHeaders:@{@"Accept":@"application/json"}];
-        
-       // [config setURLCache:[NSURLCache sharedURLCache]];
-       // [config setRequestCachePolicy:NSURLRequestReloadRevalidatingCacheData];
-        
-        _session = [NSURLSession sessionWithConfiguration:config] ;
-        
-       
-        
-        
-    
-        
-    }
-
-    return _session;
-}
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -324,11 +165,7 @@
     
     
     
-       // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
@@ -336,7 +173,7 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
-    //[self getData];
+    [self getData];
    
     User *user = [User sharedInstance];
     

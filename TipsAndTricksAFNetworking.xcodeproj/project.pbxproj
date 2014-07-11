@@ -34,7 +34,6 @@
 		CF8CA28D19693A870093B937 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28819693A870093B937 /* User.m */; };
 		CF8CA28E19693A870093B937 /* TipsandTricks.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28919693A870093B937 /* TipsandTricks.m */; };
 		CF8CA28F19693A870093B937 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28B19693A870093B937 /* Tip.m */; };
-		CFE02A071968747E0086C2E4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFE02A061968747E0086C2E4 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +92,6 @@
 		CF8CA28919693A870093B937 /* TipsandTricks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsandTricks.m; sourceTree = "<group>"; };
 		CF8CA28A19693A870093B937 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
 		CF8CA28B19693A870093B937 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
-		CFE02A061968747E0086C2E4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +122,6 @@
 		CF8587F319685E4000A62CCB = {
 			isa = PBXGroup;
 			children = (
-				CFE02A061968747E0086C2E4 /* Settings.bundle */,
 				CF85880519685E4000A62CCB /* TipsAndTricksAFNetworking */,
 				CF85882419685E4100A62CCB /* TipsAndTricksAFNetworkingTests */,
 				CF8587FE19685E4000A62CCB /* Frameworks */,
@@ -299,7 +296,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFE02A071968747E0086C2E4 /* Settings.bundle in Resources */,
 				CF85881819685E4100A62CCB /* Images.xcassets in Resources */,
 				CF85880A19685E4000A62CCB /* InfoPlist.strings in Resources */,
 				CF85881319685E4100A62CCB /* Main.storyboard in Resources */,

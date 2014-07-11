@@ -198,67 +198,6 @@ return @"Tag";
     [UIAlertView showAlertViewForTaskWithErrorOnCompletion:postTask delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     
  
- /*
-
-    NSError *conversionerror;
-    NSData *jsonData =  [NSJSONSerialization dataWithJSONObject:tipDictionary options:kNilOptions error:&conversionerror];
-    
-   // NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSMutableURLRequest *postRequestURL = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://tntfoss-vivekvpandya.rhcloud.com/entity/node"]];
-    [postRequestURL setHTTPMethod:@"POST"];
-    [postRequestURL setHTTPBody:jsonData];
-    
-    [postRequestURL setValue:user.basicAuthString forHTTPHeaderField:@"Authorization"];
-    [postRequestURL setValue:@"application/hal+json" forHTTPHeaderField:@"Content-Type"];
-    
-
-    
-   // [config setHTTPAdditionalHeaders:@{@"Authorization":user.basicAuthString,@"Content-Type":@"application/hal+json"}];
-    NSURLSession *session  = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *postTask = [session dataTaskWithRequest:postRequestURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        if(!error){
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-        if (httpResponse.statusCode == 201) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"created");
-                [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
-                [self dismissViewControllerAnimated:YES completion:nil];
-            });
-        
-        }
-        else{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSLog(@"%ld",(long)httpResponse.statusCode);
-            NSDictionary *errorDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:NULL];
-            NSLog(@"%@",errorDictionary);
-            [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
-            [self dismissViewControllerAnimated:YES completion:nil];
-        });
-            
-        }
-        }
-        else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
-
-                NSLog(@"%@",error.localizedDescription);
-            });
-        
-            
-        }
-    }];
-    
-    
-    
-    
-    
-    [postTask resume];
-    [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:YES];
-    
-    */
     
     
    

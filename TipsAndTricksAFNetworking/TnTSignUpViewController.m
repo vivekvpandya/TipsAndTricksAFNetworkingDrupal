@@ -79,12 +79,11 @@
     [userCreationRequest setHTTPBody:requestBodyData];
     [userCreationRequest setAllHTTPHeaderFields:@{@"Content-Type":@"application/hal+json",@"Authorization":@"Basic cm9vdDprfjNpVHJhaEQ="}];
     
-    //NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-   // [config setHTTPAdditionalHeaders:@{@"Content-Type":@"application/hal+json",@"Authorization":@"Basic cm9vdDprfjNpVHJhaEQ="}];
+   
     
     // here we need to pass root credential with user POST request
     // It shoud not be like that
-    
+    // for more details ferer this https://www.drupal.org/node/2291055
     
     
     NSURLSession *session = [NSURLSession sharedSession];
