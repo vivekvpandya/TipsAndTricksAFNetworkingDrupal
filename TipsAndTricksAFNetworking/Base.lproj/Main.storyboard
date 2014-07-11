@@ -13,15 +13,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <progressView key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="bWa-iR-XUM">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="3"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="progressTintColor" red="0.02352941222" green="0.47058823700000002" blue="0.74509805439999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="trackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </progressView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="push" textLabel="wPY-xg-Zd5" detailTextLabel="rVR-Kx-E3u" style="IBUITableViewCellStyleSubtitle" id="8UB-Uj-iTr">
-                                <rect key="frame" x="0.0" y="25" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8UB-Uj-iTr" id="nol-MF-Evb">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -70,7 +64,6 @@
                     </refreshControl>
                     <connections>
                         <outlet property="addTipButton" destination="YZc-xd-LsC" id="nhv-K0-pzp"/>
-                        <outlet property="processView" destination="bWa-iR-XUM" id="EzJ-d5-nDW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyW-In-UMG" userLabel="First Responder" sceneMemberID="firstResponder"/>

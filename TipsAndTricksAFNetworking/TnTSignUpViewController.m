@@ -8,6 +8,7 @@
 
 #import "TnTSignUpViewController.h"
 #import "TipsandTricks.h"
+#import "UIAlertView+AFNetworking.h"
 
 @interface TnTSignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -48,6 +49,8 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)signup:(id)sender {
+    
+    /*
     [self.usernameField resignFirstResponder];
     [self.emailField resignFirstResponder];
     
@@ -170,9 +173,50 @@
     [POSTUserTask resume];
     [self.activityIndicator startAnimating];
     
+    */
+    
+    
+    [self.usernameField resignFirstResponder];
+    [self.emailField resignFirstResponder];
+    
+    NSString *username = [self.usernameField text];
+    NSString *email = [self.emailField text];
+    
+ 
+    
+    
+    NSDictionary *requestBodyDictionary = @{
+                                            @"_links":@{
+                                                    @"type":@{
+                                                            @"href":@"http://tntfoss-vivekvpandya.rhcloud.com/rest/type/user/user"
+                                                            }
+                                                    },
+                                            @"name":@[@{@"value":username}],
+                                            @"mail":@[@{@"value":email}],
+                                            @"status":@[@{@"value":@"0"}] // 0 -> blocked state 1 -> active state
+                                            
+                                            
+                                            };
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/hal+json" forHTTPHeaderField:@"Content-Type" ];
+    [manager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
     
     
     
+NSURLSessionDataTask *postUser = [manager POST:@"http://tntfoss-vivekvpandya.rhcloud.com/entity/user" parameters:requestBodyDictionary success:^(NSURLSessionDataTask *task, id responseObject) {
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sign-up Successful" message:@"A mail with further details has been sent to your mail id" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
+    
+} failure:^(NSURLSessionDataTask *task, NSError *error) {
+    
+    
+    
+}];
+    
+    [UIAlertView showAlertViewForTaskWithErrorOnCompletion:postUser delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     
 }
 
