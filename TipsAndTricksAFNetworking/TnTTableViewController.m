@@ -20,6 +20,8 @@
 @property (nonatomic,strong) NSMutableArray *tipList; // to hold NSDictionaries that are created with JSON Response and each NSDictionary represent tip object i.e it will contain all the fields which you have enabled from RESTExport for the view
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addTipButton;
 
+@property(strong,nonatomic) NSMutableArray *filteredTips;
+@property (weak, nonatomic) IBOutlet UISearchBar *tipSearchbar;
 
 
 @end
@@ -52,8 +54,8 @@
             [self.tableView reloadData];
        
         
-            
-            
+       self.filteredTips  = [NSMutableArray arrayWithCapacity:[self.tipList count]];
+       
             
             
        
@@ -162,7 +164,7 @@
     
     
     
-    
+
     
     
     
@@ -206,17 +208,32 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return   self.filteredTips.count;
+    }
+    else
     return [self.tipList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"push" forIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"push" forIndexPath:indexPath];
+    Tip *tipObject = nil;
+   if(tableView == self.searchDisplayController.searchResultsTableView){
+      if (self.filteredTips || [self.filteredTips count] != 0) {
+    tipObject = [self.filteredTips objectAtIndex:indexPath.row];
+      }
+     
+      
     
-    cell.textLabel.text = [[self.tipList objectAtIndex:indexPath.row] valueForKeyPath:@"title"];
-    cell.detailTextLabel.text = [[self.tipList objectAtIndex:indexPath.row] valueForKeyPath:@"changed"];
+   }
+    else{
+        tipObject = [self.tipList objectAtIndex:indexPath.row];
+   }
+    
+    cell.textLabel.text = [tipObject valueForKeyPath:@"title"];
+    cell.detailTextLabel.text = [tipObject valueForKeyPath:@"changed"];
     return cell;
 }
 
@@ -282,7 +299,11 @@
             
             if ([segue.identifier isEqualToString:@"push"]) {
                 
-                TnTTipViewController *newVC = (TnTTipViewController *)segue.destinationViewController;
+                 TnTTipViewController *newVC = (TnTTipViewController *)segue.destinationViewController;
+                
+                if (self.searchDisplayController.active)
+                    newVC.tip  = [self.filteredTips objectAtIndex:[self.searchDisplayController.searchResultsTableView indexPathForCell:sender].row];
+                else
                 newVC.tip = [self.tipList objectAtIndex:[self.tableView indexPathForCell:sender].row];
                 
             }
@@ -292,7 +313,27 @@
     
 }
 
+#pragma Search Bar implementation
 
+-(void)filterContentArrayForSearchText:(NSString *)searchText{
+
+    NSLog(@"%@",self.filteredTips);
+    [self.filteredTips removeAllObjects];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[c] %@",searchText];
+    self.filteredTips = [NSMutableArray arrayWithArray:[self.tipList filteredArrayUsingPredicate:predicate]];
+    NSLog(@"%@",self.filteredTips);
+
+}
+
+#pragma  SearchDisplayController Delegate Method
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
+    
+    [self filterContentArrayForSearchText:searchString];
+  
+    return YES;
+
+}
 
 
 @end

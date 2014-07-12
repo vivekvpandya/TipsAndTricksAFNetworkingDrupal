@@ -13,9 +13,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Tip here ... " id="cco-t2-C0O">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.0" green="0.46666666670000001" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="UkZ-10-KOp" id="zo5-9y-DyJ"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="push" textLabel="wPY-xg-Zd5" detailTextLabel="rVR-Kx-E3u" style="IBUITableViewCellStyleSubtitle" id="8UB-Uj-iTr">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8UB-Uj-iTr" id="nol-MF-Evb">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -64,9 +73,20 @@
                     </refreshControl>
                     <connections>
                         <outlet property="addTipButton" destination="YZc-xd-LsC" id="nhv-K0-pzp"/>
+                        <outlet property="searchDisplayController" destination="gGb-KC-A68" id="HJA-Rt-6SL"/>
+                        <outlet property="tipSearchbar" destination="cco-t2-C0O" id="Kfg-fF-PnF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyW-In-UMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="gGb-KC-A68">
+                    <connections>
+                        <outlet property="delegate" destination="UkZ-10-KOp" id="ucV-Nd-ym8"/>
+                        <outlet property="searchBar" destination="cco-t2-C0O" id="rXd-vp-oMz"/>
+                        <outlet property="searchContentsController" destination="UkZ-10-KOp" id="2CA-r2-JeQ"/>
+                        <outlet property="searchResultsDataSource" destination="UkZ-10-KOp" id="GfA-2L-Hyl"/>
+                        <outlet property="searchResultsDelegate" destination="UkZ-10-KOp" id="xMe-TX-97c"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1323" y="-445"/>
         </scene>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TnTTableViewController : UITableViewController <NSURLSessionDataDelegate,NSURLSessionTaskDelegate>
+@interface TnTTableViewController : UITableViewController <UISearchBarDelegate,UISearchDisplayDelegate>
 
 
 
