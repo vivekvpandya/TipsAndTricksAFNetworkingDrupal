@@ -290,8 +290,7 @@
         
         NSURLSessionDataTask *updateTask = [manager PATCH:[NSString stringWithFormat:@"http://tntfoss-vivekvpandya.rhcloud.com/node/%@",[self.tip valueForKeyPath:@"nid"]] parameters:tipDictionary success:^(NSURLSessionDataTask *task, id responseObject) {
             
-            [self dismissViewControllerAnimated:YES completion:nil];
-            
+            [self.navigationController popToRootViewControllerAnimated:YES];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"%@",error.description);
         }];
