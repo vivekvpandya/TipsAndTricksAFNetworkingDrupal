@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RIg-GJ-86K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LXC-z9-THI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -544,10 +544,10 @@
             </objects>
             <point key="canvasLocation" x="2142" y="789"/>
         </scene>
-        <!--TnTNS Operation Demo View Controller-->
+        <!--Demo Controller-->
         <scene sceneID="N9k-u1-4jJ">
             <objects>
-                <viewController id="LXC-z9-THI" customClass="TnTNSOperationDemoViewController" sceneMemberID="viewController">
+                <viewController id="LXC-z9-THI" customClass="SDKDemoController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rb8-r3-g1C"/>
                         <viewControllerLayoutGuide type="bottom" id="nAX-6K-dSA"/>
@@ -557,11 +557,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idf-t0-Xk0">
-                                <rect key="frame" x="113" y="269" width="94" height="30"/>
+                                <rect key="frame" x="145" y="269" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="PerformFetch">
+                                <state key="normal" title="Test">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="test:" destination="LXC-z9-THI" eventType="touchUpInside" id="0mM-5z-vth"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

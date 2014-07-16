@@ -34,6 +34,8 @@
 		CF8CA28D19693A870093B937 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28819693A870093B937 /* User.m */; };
 		CF8CA28E19693A870093B937 /* TipsandTricks.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28919693A870093B937 /* TipsandTricks.m */; };
 		CF8CA28F19693A870093B937 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8CA28B19693A870093B937 /* Tip.m */; };
+		CFB5BB741976EF0200D013FA /* Drupal8RESTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB5BB731976EF0200D013FA /* Drupal8RESTSessionManager.m */; };
+		CFB5BB7B1976FBE700D013FA /* SDKDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB5BB7A1976FBE700D013FA /* SDKDemoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		CF8CA28919693A870093B937 /* TipsandTricks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsandTricks.m; sourceTree = "<group>"; };
 		CF8CA28A19693A870093B937 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
 		CF8CA28B19693A870093B937 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
+		CFB5BB721976EF0200D013FA /* Drupal8RESTSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drupal8RESTSessionManager.h; sourceTree = "<group>"; };
+		CFB5BB731976EF0200D013FA /* Drupal8RESTSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drupal8RESTSessionManager.m; sourceTree = "<group>"; };
+		CFB5BB791976FBE700D013FA /* SDKDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKDemoController.h; sourceTree = "<group>"; };
+		CFB5BB7A1976FBE700D013FA /* SDKDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKDemoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		CF8587F319685E4000A62CCB = {
 			isa = PBXGroup;
 			children = (
+				CFB5BB751976EF0F00D013FA /* DruSDK */,
 				CF85880519685E4000A62CCB /* TipsAndTricksAFNetworking */,
 				CF85882419685E4100A62CCB /* TipsAndTricksAFNetworkingTests */,
 				CF8587FE19685E4000A62CCB /* Frameworks */,
@@ -216,6 +223,17 @@
 				CF85882719685E4100A62CCB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFB5BB751976EF0F00D013FA /* DruSDK */ = {
+			isa = PBXGroup;
+			children = (
+				CFB5BB721976EF0200D013FA /* Drupal8RESTSessionManager.h */,
+				CFB5BB731976EF0200D013FA /* Drupal8RESTSessionManager.m */,
+				CFB5BB791976FBE700D013FA /* SDKDemoController.h */,
+				CFB5BB7A1976FBE700D013FA /* SDKDemoController.m */,
+			);
+			name = DruSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +371,7 @@
 				CF8CA28D19693A870093B937 /* User.m in Sources */,
 				CF8CA26B196939980093B937 /* SGKeychain.m in Sources */,
 				CF8CA27D19693A6B0093B937 /* TnTEditandNewTipViewController.m in Sources */,
+				CFB5BB741976EF0200D013FA /* Drupal8RESTSessionManager.m in Sources */,
 				CF8CA28019693A6B0093B937 /* UserDetailsViewController.m in Sources */,
 				CF85881019685E4100A62CCB /* AppDelegate.m in Sources */,
 				CF8CA27E19693A6B0093B937 /* TnTTipViewController.m in Sources */,
@@ -364,6 +383,7 @@
 				CF8CA28C19693A870093B937 /* JSONModel.m in Sources */,
 				CF85880C19685E4000A62CCB /* main.m in Sources */,
 				CF8CA27C19693A6B0093B937 /* TnTSignUpViewController.m in Sources */,
+				CFB5BB7B1976FBE700D013FA /* SDKDemoController.m in Sources */,
 				CF8CA28E19693A870093B937 /* TipsandTricks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
