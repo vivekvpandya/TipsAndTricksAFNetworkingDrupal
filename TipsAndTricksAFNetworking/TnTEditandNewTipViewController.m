@@ -181,6 +181,7 @@ return @"Tag";
     
     NSDictionary *tipDictionary = @{@"_links": @{@"type":@{@"href":@"http://tntfoss-vivekvpandya.rhcloud.com/rest/type/node/tip" }},@"uid":@[@{@"target_id":user.uid} ],@"field_tag":@[@{@"target_id":tagID}],@"body":@[@{@"value":[self.bodyTextView.textStorage mutableString],@"format":@"full_html"}],@"title":@[@{@"value":self.tipTitle.text}]};
    
+    NSLog(@"%@",tipDictionary);
     
     AFHTTPSessionManager *manager =[AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

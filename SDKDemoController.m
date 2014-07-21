@@ -3,17 +3,19 @@
 //  TipsAndTricksAFNetworking
 //
 //  Created by Vivek Pandya on 7/16/14.
-//  Copyright (c) 2014 Vivek Pandya. All rights reserved.
+// 
 //
 
 #import "SDKDemoController.h"
 #import "Drupal8RESTSessionManager.h"
 
 @interface SDKDemoController ()
-
+@property (nonatomic,strong) NSString *baseURL;
 @end
 
 @implementation SDKDemoController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +28,7 @@
 
 - (void)viewDidLoad
 {
+    self.baseURL = [NSString stringWithFormat:@"http://tntfoss-vivekvpandya.rhcloud.com"];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -50,14 +53,156 @@
     
     Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
     
-  NSDictionary *parameters=  @{@"uid":@[@{@"target_id":@"2"} ],@"field_tag":@[@{@"target_id":@"3"}],@"body":@[@{@"value":@"text",@"format":@"full_html"}],@"title":@[@{@"value":@"value"}]};
-   
-    [manager POSTNode:@"http://tntfoss-vivekvpandya.rhcloud.com" bundleType:@"tip" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    
+    
+  NSDictionary *parameters=  @{@"uid":@[@{@"target_id":@"1"} ],@"field_tag":@[@{@"target_id":@"1"}],@"body":@[@{@"value":@"This is text",@"format":@"full_html"}],@"title":@[@{@"value":@"Tip Via Drupal 8 iOS sdk"}]};
+    
+    
+   [manager POSTNode:self.baseURL
+          bundleType:@"tip"
+          parameters:parameters
+             success:^(NSURLSessionDataTask *task, id responseObject) {
+                 NSLog(@"OK POSTED");
+   }
+             failure:^(NSURLSessionDataTask *task, NSError *error) {
+                 NSLog(@"%@",error.description);
+             }];
+    
+}
+- (IBAction)testDelete:(id)sender {
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    
+    
+    
+    [manager setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPRequestHeader:@"Authorization"];
+    
+    [manager DELETENode:self.baseURL nodeId:@"55" success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"ok deleted");
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
+        NSLog(@"%@",error.description);
     }];
     
+}
+- (IBAction)getView:(id)sender {
+    
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    [manager GetView:self.baseURL
+            viewName:@"vocabulary/foss"
+          parameters:nil
+             success:^(NSURLSessionDataTask *task, id responseObject) {
+                 NSLog(@"%@",responseObject);
+    }
+             failure:^(NSURLSessionDataTask *task, NSError *error) {
+                 NSLog(@"%@",error.description);
+             }];
+    
+
+    
+    
+}
+- (IBAction)testGetNode:(id)sender {
+    
+     Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+   
+    [manager setValue:@"application/hal+json" forHTTPRequestHeader:@"Accept"];
+    
+    
+    
+    [manager GETNode:self.baseURL
+              nodeId:@"57"
+          parameters:nil
+             success:^(NSURLSessionDataTask *task, id responseObject) {
+                 NSLog(@"%@",responseObject);
+             }
+             failure:^(NSURLSessionDataTask *task, NSError *error) {
+                 NSLog(@"%@",error.description);
+             }];
+    
+    
+}
+- (IBAction)getUser:(id)sender {
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    [manager setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPRequestHeader:@"Authorization"];
+    [manager setValue:@"application/hal+json" forHTTPRequestHeader:@"Accept"];
+    
+    [manager GETUser:self.baseURL userId:@"7" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+}
+- (IBAction)deleteUser:(id)sender {
+
+    // this method will require Administrator credentials
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    [manager setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPRequestHeader:@"Authorization"];
+    [manager DELETEUser:self.baseURL
+                 userId:@"122"
+                success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"OK Delete");
+    }
+                failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+
+}
+- (IBAction)patchNode:(id)sender {
+    
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    
+    
+    NSDictionary *parameters=  @{@"uid":@[@{@"target_id":@"1"} ],@"field_tag":@[@{@"target_id":@"2"}],@"body":@[@{@"value":@" Hey I have updated this node via drupal 8 ios kit ",@"format":@"full_html"}],@"title":@[@{@"value":@"Tip Via Drupal 8 iOS sdk"}]};
+    
+    [manager PATCHNode:self.baseURL bundleType:@"tip" nodeId:@"61" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"UPDATED !");
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+    
+    
+}
+- (IBAction)postUser:(id)sender {
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    [manager setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPRequestHeader:@"Authorization"];
+    
+    NSDictionary *parameters = @{@"name":@[@{@"value":@"Dr8Test"}],@"mail":@[@{@"value":@"someunique@gmail.com"}],
+                                 @"pass":@[@{@"value":@"New@123"}]};
+    
+    [manager POSTUser:self.baseURL
+           parameters:parameters
+              success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"User Created");
+    }
+              failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+    
+    
+}
+- (IBAction)patchUser:(id)sender {
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    
+    
+    NSDictionary *parameters = @{@"name":@[@{@"value":@"Dr8Testing"}],@"mail":@[@{@"value":@"some1unique@gmail.com"}],
+                                 @"pass":@[@{@"value":@"New@123"}]};
+    
+    [manager PATCHUser:self.baseURL userId:@"181" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"User UPDATED !");
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
 }
 
 @end
