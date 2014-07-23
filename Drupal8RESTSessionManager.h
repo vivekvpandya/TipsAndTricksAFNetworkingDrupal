@@ -96,7 +96,7 @@
                              success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
                              failure:(void(^)(NSURLSessionDataTask *task, id responseObject))failure;
 -(NSURLSessionDataTask *)DELETEComment:(NSString *)url
-                             userId:(NSString *)cid
+                             commentId:(NSString *)cid
                             success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                             failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
