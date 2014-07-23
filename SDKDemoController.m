@@ -89,7 +89,7 @@
     
     
     Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
-    [manager GetView:self.baseURL
+    [manager GETView:self.baseURL
             viewName:@"vocabulary/foss"
           parameters:nil
              success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -203,6 +203,28 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error.description);
     }];
+}
+- (IBAction)postArticle:(id)sender {
+    
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    
+    
+    NSDictionary *parameters=  @{@"uid":@[@{@"target_id":@"1"} ],@"body":@[@{@"value":@"New Article first time with REST API ",@"format":@"full_html"}],@"title":@[@{@"value":@"Article Via Drupal 8 iOS sdk"}]};
+    
+    
+    [manager POSTNode:self.baseURL
+           bundleType:@"article"
+           parameters:parameters
+              success:^(NSURLSessionDataTask *task, id responseObject) {
+                  NSLog(@"OK POSTED");
+              }
+              failure:^(NSURLSessionDataTask *task, NSError *error) {
+                  NSLog(@"%@",error.description);
+              }];
+    
 }
 
 @end

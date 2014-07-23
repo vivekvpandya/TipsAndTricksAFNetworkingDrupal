@@ -199,7 +199,7 @@
 
 #pragma mark GET method for View - implementation
 
--(NSURLSessionDataTask *)GetView:(NSString *)url
+-(NSURLSessionDataTask *)GETView:(NSString *)url
                         viewName:(NSString *)viewName
                       parameters:(id)parameters
                          success:(void (^)(NSURLSessionDataTask *, id))success

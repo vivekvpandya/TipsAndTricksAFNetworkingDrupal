@@ -17,7 +17,7 @@
 -(void)setValue:(NSString *)value forHTTPRequestHeader:(NSString *)header;
 
 
-#pragma  CRUD for node
+#pragma mark CRUD for node
 -(NSURLSessionDataTask *)GETNode:(NSString *)url
                             nodeId:(NSString *)nid
                         parameters:(id)parameters
@@ -43,7 +43,7 @@
                            failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 
-#pragma  CRUD for user
+#pragma mark  CRUD for user
 
 -(NSURLSessionDataTask *)GETUser:(NSString *)url
                             userId:(NSString *)uid
@@ -68,14 +68,37 @@
                            failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 
-#pragma GET method for view
+#pragma mark GET method for view
 
--(NSURLSessionDataTask *)GetView:(NSString *)url
+-(NSURLSessionDataTask *)GETView:(NSString *)url
                         viewName:(NSString *)viewName
                       parameters:(id)parameters
                            success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                            failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
+
+#pragma mark CRUD for Comment
+
+-(NSURLSessionDataTask *)GETCommment:(NSString *)url
+                           commentId:(NSString *)cid
+                          parameters:(id)parameters
+                             success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                             failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+-(NSURLSessionDataTask *)PATCHCommment:(NSString *)url
+                           commentId:(NSString *)cid
+                          parameters:(id)parameters
+                             success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                             failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+-(NSURLSessionDataTask *)POSTComment:(NSString *)url
+                            targetEntityId:(NSString *)entityID
+                          parameters:(id)parameters
+                             success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
+                             failure:(void(^)(NSURLSessionDataTask *task, id responseObject))failure;
+-(NSURLSessionDataTask *)DELETEComment:(NSString *)url
+                             userId:(NSString *)cid
+                            success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                            failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 
 @end
