@@ -248,9 +248,13 @@
                                  };
     
 
-    [manager POSTComment:self.baseURL targetEntityId:@"16" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    [manager POSTComment:self.baseURL
+          targetEntityId:@"16"
+              parameters:parameters
+                 success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"OK Comment POSTED !");
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }
+                 failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error.description);
     }];
     
@@ -260,9 +264,13 @@
     Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
     [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
     [manager setValue:@"application/json" forHTTPRequestHeader:@"Accept"];
-    [manager GETCommment:self.baseURL commentId:@"6" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [manager GETCommment:self.baseURL
+               commentId:@"6"
+              parameters:nil
+                 success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"%@", responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }
+                 failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error.description);
     }];
     
@@ -288,9 +296,13 @@
                                  
                                  };
     
-    [manager PATCHCommment:self.baseURL commentId:@"6" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    [manager PATCHCommment:self.baseURL
+                 commentId:@"6"
+                parameters:parameters
+                   success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"OK Comment updated !");
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }
+                   failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error.description);
     }];
 
@@ -299,14 +311,34 @@
 - (IBAction)deleteComment:(id)sender {
     Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
     [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
-    [manager DELETEComment:self.baseURL commentId:@"12" success:^(NSURLSessionDataTask *task, id responseObject) {
+    [manager DELETEComment:self.baseURL
+                 commentId:@"12"
+                   success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"OK Comment deleted !");
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }
+                   failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error.description);
     }];
 
     
     
+}
+- (IBAction)demoDownload:(id)sender {
+    
+    // to download a file from drupal web site, direct file URL is needed 
+    
+    NSURL *url = [NSURL URLWithString:@"http://localhost/dr8a13/sites/default/files/field/image/profile.jpg"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSLog(@"File downloaded to: %@", filePath);
+    }];
+    
+    [downloadTask resume];
 }
 
 @end
