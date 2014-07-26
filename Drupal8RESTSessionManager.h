@@ -94,7 +94,7 @@
                             targetEntityId:(NSString *)entityID
                           parameters:(id)parameters
                              success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
-                             failure:(void(^)(NSURLSessionDataTask *task, id responseObject))failure;
+                             failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
 -(NSURLSessionDataTask *)DELETEComment:(NSString *)url
                              commentId:(NSString *)cid
                             success:(void (^)(NSURLSessionDataTask *task, id responseObject))success

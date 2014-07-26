@@ -312,4 +312,110 @@
 
 }
 
+#pragma mark CRUD methods for comments - implementataion
+
+-(NSURLSessionDataTask *)GETCommment:(NSString *)url
+                           commentId:(NSString *)cid
+                          parameters:(id)parameters
+                             success:(void (^)(NSURLSessionDataTask *, id))success
+                             failure:(void (^)(NSURLSessionDataTask *, NSError *))failure{
+
+    NSString *getRESTEndpoint = [NSString stringWithFormat:@"%@/comment/%@",url,cid];
+    NSURLSessionDataTask *getCommentTask = [self GETEntity:getRESTEndpoint
+                                                parameters:nil
+                                                   success:success
+                                                   failure:failure];
+    return getCommentTask;
+    
+}
+
+-(NSURLSessionDataTask *)PATCHCommment:(NSString *)url
+                             commentId:(NSString *)cid
+                            parameters:(id)parameters
+                               success:(void (^)(NSURLSessionDataTask *, id))success
+                               failure:(void (^)(NSURLSessionDataTask *, NSError *))failure{
+    
+    
+    
+  //  NSString *relationKey = [NSString stringWithFormat:@"%@/rest/relation/comment/node__comment/entity_id",url];
+   // NSString *relationValue = [NSString stringWithFormat:@"%@/node/%@",url,entityID];
+    
+    
+    
+    
+    [self setValue:@"application/hal+json" forHTTPRequestHeader:@"Content-Type"];
+    
+    
+    NSString *patchRESTEndpoint = [NSString stringWithFormat:@"%@/comment/%@",url,cid];
+    
+    NSString *linkType = [NSString stringWithFormat:@"%@/rest/type/comment/node__comment",url];
+    
+    
+    NSMutableDictionary *requestBody = [(NSDictionary *)parameters mutableCopy];
+    
+    [requestBody addEntriesFromDictionary:@{@"_links":@{@"type":@{@"href":linkType}}}];
+    
+    
+    
+    NSURLSessionDataTask *patchCommentTask = [self PATCHEntity:patchRESTEndpoint
+                                                 parameters:requestBody
+                                                    success:success
+                                                    failure:failure];
+    return patchCommentTask;
+
+
+    
+
+}
+
+-(NSURLSessionDataTask *)POSTComment:(NSString *)url
+                      targetEntityId:(NSString *)entityID
+                          parameters:(id)parameters
+                             success:(void (^)(NSURLSessionDataTask *, id))success
+                             failure:(void (^)(NSURLSessionDataTask *, NSError *))failure{
+    
+    
+    
+    
+    [self setValue:@"application/hal+json" forHTTPRequestHeader:@"Content-Type"];
+    
+    
+    NSString *postRESTEndpoint = [NSString stringWithFormat:@"%@/entity/comment",url];
+    
+    NSString *linkType = [NSString stringWithFormat:@"%@/rest/type/comment/node__comment",url];
+    
+    NSString *relationKey = [NSString stringWithFormat:@"%@/rest/relation/comment/node__comment/entity_id",url];
+    NSString *relationValue = [NSString stringWithFormat:@"%@/node/%@",url,entityID];
+    
+    
+    NSMutableDictionary *requestBody = [(NSDictionary *)parameters mutableCopy];
+    
+    [requestBody addEntriesFromDictionary:@{@"_links":@{@"type":@{@"href":linkType},relationKey:relationValue},@"entity_id":@[@{@"target_id":entityID,@"revision_id":@""}]}];
+    
+    
+    
+    
+    NSURLSessionDataTask *postCommentTask = [self POSTEntity:postRESTEndpoint
+                                               parameters:requestBody
+                                                  success:success
+                                                  failure:failure];
+    return postCommentTask;
+}
+
+-(NSURLSessionDataTask *)DELETEComment:(NSString *)url
+                             commentId:(NSString *)cid
+                               success:(void (^)(NSURLSessionDataTask *, id))success
+                               failure:(void (^)(NSURLSessionDataTask *, NSError *))failure{
+    
+    
+    NSString *deleteRESTEndpoint = [NSString stringWithFormat:@"%@/comment/%@",url,cid];
+    NSURLSessionDataTask *deleteCommentTask = [self DELETEEntity:deleteRESTEndpoint
+                                                parameters:nil
+                                                   success:success
+                                                   failure:failure];
+    return  deleteCommentTask;
+
+}
+
+
 @end

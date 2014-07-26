@@ -226,5 +226,87 @@
               }];
     
 }
+- (IBAction)postComment:(id)sender {
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    
+    NSDictionary *parameters = @{
+                                 @"subject":@[
+    @{
+        @"value":@"A comment with Drupal 8 iOS sdk !"
+    }
+                                            ],
+                                 @"comment_body":@[
+    @{
+        @"value":@"<p>Drupal 8 will rock !.</p>\r\n",
+        @"format":@"basic_html"
+    }
+                                                 ]
+                                 
+                                 };
+    
+
+    [manager POSTComment:self.baseURL targetEntityId:@"16" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"OK Comment POSTED !");
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+    
+}
+- (IBAction)getComment:(id)sender {
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    [manager setValue:@"application/json" forHTTPRequestHeader:@"Accept"];
+    [manager GETCommment:self.baseURL commentId:@"6" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+    
+    
+}
+- (IBAction)patchComment:(id)sender {
+    
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    
+    NSDictionary *parameters = @{
+                                 @"subject":@[
+                                         @{
+                                             @"value":@"A comment update with Drupal 8 iOS sdk !"
+                                             }
+                                         ],
+                                 @"comment_body":@[
+                                         @{
+                                             @"value":@"<p>Drupal 8 will rock !. Drupal 8 SDK will also rock.</p>\r\n",
+                                             @"format":@"basic_html"
+                                             }
+                                         ]
+                                 
+                                 };
+    
+    [manager PATCHCommment:self.baseURL commentId:@"6" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"OK Comment updated !");
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+
+    
+}
+- (IBAction)deleteComment:(id)sender {
+    Drupal8RESTSessionManager *manager = [[Drupal8RESTSessionManager alloc]init];
+    [manager.sessionManager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    [manager DELETEComment:self.baseURL commentId:@"12" success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"OK Comment deleted !");
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+
+    
+    
+}
 
 @end
