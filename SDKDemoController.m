@@ -325,7 +325,7 @@
 }
 - (IBAction)demoDownload:(id)sender {
     
-    // to download a file from drupal web site, direct file URL is needed 
+    // to download a file from drupal web site, direct file URL is needed
     
     NSURL *url = [NSURL URLWithString:@"http://localhost/dr8a13/sites/default/files/field/image/profile.jpg"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
