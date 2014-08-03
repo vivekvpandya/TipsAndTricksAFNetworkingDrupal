@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A4828C212C12463898F0627A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A790233FF7490E93C4E30E /* libPods.a */; };
+		CF665214198D6A8F0004B2F7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665213198D6A8F0004B2F7 /* Main_iPad.storyboard */; };
 		CF85880019685E4000A62CCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8587FF19685E4000A62CCB /* Foundation.framework */; };
 		CF85880219685E4000A62CCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF85880119685E4000A62CCB /* CoreGraphics.framework */; };
 		CF85880419685E4000A62CCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF85880319685E4000A62CCB /* UIKit.framework */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		39802581E93A418EBFAF9664 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B6A790233FF7490E93C4E30E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF665213198D6A8F0004B2F7 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		CF8587FC19685E4000A62CCB /* TipsAndTricksAFNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsAndTricksAFNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8587FF19685E4000A62CCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF85880119685E4000A62CCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,6 +166,7 @@
 				CF85880E19685E4100A62CCB /* AppDelegate.h */,
 				CF85880F19685E4100A62CCB /* AppDelegate.m */,
 				CF85881119685E4100A62CCB /* Main.storyboard */,
+				CF665213198D6A8F0004B2F7 /* Main_iPad.storyboard */,
 				CF8CA269196939980093B937 /* SGKeychain.h */,
 				CF8CA26C19693A6B0093B937 /* TnTSignUpViewController.h */,
 				CF8CA26D19693A6B0093B937 /* TnTSignUpViewController.m */,
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF85881819685E4100A62CCB /* Images.xcassets in Resources */,
+				CF665214198D6A8F0004B2F7 /* Main_iPad.storyboard in Resources */,
 				CF85880A19685E4000A62CCB /* InfoPlist.strings in Resources */,
 				CF85881319685E4100A62CCB /* Main.storyboard in Resources */,
 			);
@@ -513,7 +517,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TipsAndTricksAFNetworking/TipsAndTricksAFNetworking-Prefix.pch";
 				INFOPLIST_FILE = "TipsAndTricksAFNetworking/TipsAndTricksAFNetworking-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -527,7 +533,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TipsAndTricksAFNetworking/TipsAndTricksAFNetworking-Prefix.pch";
 				INFOPLIST_FILE = "TipsAndTricksAFNetworking/TipsAndTricksAFNetworking-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
