@@ -69,10 +69,10 @@
        
             
             [self.tipList removeAllObjects];
-            for (NSDictionary *tip in responseObject)
+            for (NSMutableDictionary *tip in responseObject)
             {
-                
-                [self.tipList addObject:tip];
+                Tip *newTip = [[Tip alloc]initWithDictionary:tip];
+                [self.tipList addObject:newTip];
                 
             }
             [self.tableView reloadData];

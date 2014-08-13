@@ -635,7 +635,7 @@
 #pragma mark - TnTSelectTagViewController delegate
 
 -(void)backButtonSelected:(id)object{
-
+    
     NSDictionary *tag = (NSDictionary *)object;
     
     if (self.editing) {
@@ -645,7 +645,7 @@
         [self.tableView reloadData];
         
     }
-
+    
 }
 
 #pragma mark -UIActionSheet Delegate
