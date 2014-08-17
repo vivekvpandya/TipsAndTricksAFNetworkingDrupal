@@ -103,7 +103,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/hal+json" forHTTPHeaderField:@"Content-Type" ];
-    [manager.requestSerializer setValue:@"Basic cm9vdDprfjNpVHJhaEQ=" forHTTPHeaderField:@"Authorization"];
+    [manager.requestSerializer setValue:@"admin http basic auth cred" forHTTPHeaderField:@"Authorization"];
     
     // here we need to pass root credential with user POST request
     // It shoud not be like that
